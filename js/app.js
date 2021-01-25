@@ -68,7 +68,7 @@ function iniciarRoles(){
     roles.push(new Rol(14, "Consultant"));    
     roles.push(new Rol(15, "Architect"));   
 }
-
+  
 function iniciarCuestionario(){
     let participante = new Participante();
 
