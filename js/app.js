@@ -24,31 +24,39 @@ function ejecutarLogicaTemporalBienvenida(){
 var regiones = new Array();
 var roles = new Array();
 
-function iniciarRegiones(){    
-    regiones.push(new Region(1, "CABA"));
-    regiones.push(new Region(2, "Buenos Aires"));
-    regiones.push(new Region(3, "Cordoba"));
-    regiones.push(new Region(4, "Santa Fe"));
-    regiones.push(new Region(5, "Mendoza"));
-    regiones.push(new Region(6, "Entre Rios"));
-    regiones.push(new Region(7, "Chaco"));
-    regiones.push(new Region(8, "Tucuman"));
-    regiones.push(new Region(9, "Neuquen"));
-    regiones.push(new Region(10, "Misiones"));
-    regiones.push(new Region(11, "Rio Negro"));
-    regiones.push(new Region(12, "Chubut"));    
-    regiones.push(new Region(13, "Corrientes"));    
-    regiones.push(new Region(14, "Jujuy"));    
-    regiones.push(new Region(15, "Salta"));    
-    regiones.push(new Region(16, "La Rioja"));    
-    regiones.push(new Region(17, "San Luis"));    
-    regiones.push(new Region(18, "San Juan"));    
-    regiones.push(new Region(19, "Tierra del Fuego"));    
-    regiones.push(new Region(20, "Santiago del Estero"));    
-    regiones.push(new Region(21, "Formosa"));    
-    regiones.push(new Region(22, "Catamarca"));    
-    regiones.push(new Region(23, "Santa Cruz"));    
-    regiones.push(new Region(24, "La Pampa"));    
+function iniciarProvincias(){      
+
+    const provinces = document.getElementById('provinces');
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://apis.datos.gob.ar/georef/api/provincias', true);    
+
+    request.onload = function() {
+        if (this.status >= 200 && this.status < 400) {
+            var data = JSON.parse(this.response);
+
+            data.provincias.sort(function(a,b){
+                return a.id - b.id;
+            })
+
+            data.provincias.map(function(x){
+                var option = document.createElement("option");
+                option.text = x.nombre;
+                option.value = x.id;
+
+                provinces.appendChild(option);
+            });
+        } else {
+            // We reached our target server, but it returned an error
+        }
+    };
+
+    request.onerror = function(err) {
+        // There was a connection error of some sort
+        console.error(err);
+    };
+
+    request.send();
 }
 
 function iniciarRoles(){    
@@ -80,7 +88,7 @@ function iniciarCuestionario(){
 
 }
 
-ejecutarLogicaTemporalBienvenida();
-iniciarRegiones();
-iniciarRoles();
-iniciarCuestionario();
+// ejecutarLogicaTemporalBienvenida();
+iniciarProvincias();
+// iniciarRoles();
+// iniciarCuestionario();
