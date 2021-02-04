@@ -1,0 +1,156 @@
+{
+    "plataformas": [
+        {
+            "id": "01",
+            "nombre": "Salesforce"
+        },
+        {
+            "id": "02",
+            "nombre": "Amazon Web Services"
+        },
+        {
+            "id": "03",
+            "nombre": "Serverless"
+        },
+        {
+            "id": "04",
+            "nombre": "Docker"
+        },
+        {
+            "id": "05",
+            "nombre": "OpenShift"
+        },
+        {
+            "id": "06",
+            "nombre": "Oracle"
+        },
+        {
+            "id": "07",
+            "nombre": "AIX"
+        },
+        {
+            "id": "08",
+            "nombre": "Azure"
+        },
+        {
+            "id": "09",
+            "nombre": "IBM Cloud / Watson"
+        },
+        {
+            "id": "10",
+            "nombre": "Heroku"
+        },
+        {
+            "id": "11",
+            "nombre": "HP-UX"
+        },
+        {
+            "id": "12",
+            "nombre": "Mainframe"
+        },
+        {
+            "id": "13",
+            "nombre": "Kubernetes"
+        },
+        {
+            "id": "14",
+            "nombre": "Google Cloud Platform/AppEngine"
+        },
+        {
+            "id": "15",
+            "nombre": "Firebase"
+        },
+        {
+            "id": "16",
+            "nombre": "Windows"
+        },
+        {
+            "id": "17",
+            "nombre": "Sketch"
+        },
+        {
+            "id": "18",
+            "nombre": "SAP"
+        },
+        {
+            "id": "19",
+            "nombre": "Linux"
+        },
+        {
+            "id": "20",
+            "nombre": "Windows Server"
+        },
+        {
+            "id": "21",
+            "nombre": "BSD"
+        },
+        {
+            "id": "22",
+            "nombre": "Qlik"
+        },
+        {
+            "id": "23",
+            "nombre": "VMWare"
+        },
+        {
+            "id": "24",
+            "nombre": "Solaris"
+        },
+        {
+            "id": "25",
+            "nombre": "Ansible"
+        },
+        {
+            "id": "26",
+            "nombre": "Cisco"
+        },
+        {
+            "id": "27",
+            "nombre": "JIRA"
+        },
+        {
+            "id": "28",
+            "nombre": "Citrix"
+        },
+        {
+            "id": "29",
+            "nombre": "Fortinet"
+        },
+        {
+            "id": "30",
+            "nombre": "Jenkins"
+        },
+        {
+            "id": "31",
+            "nombre": "Networking"
+        },
+        {
+            "id": "32",
+            "nombre": "Unity"
+        },
+        {
+            "id": "33",
+            "nombre": "Terraform"
+        },
+        {
+            "id": "34",
+            "nombre": "Oracle Cloud"
+        },
+        {
+            "id": "35",
+            "nombre": "Mikrotik"
+        },
+        {
+            "id": "36",
+            "nombre": "Proxmox"
+        },
+        {
+            "id": "37",
+            "nombre": "OpenStack"
+        },
+        {
+            "id": "99",
+            "nombre": "Ninguna de las anteriores"
+        }
+    ]
+}

@@ -1,0 +1,160 @@
+{
+    "lenguajes": [
+        {
+            "id": "01",
+            "nombre": "Kotlin"
+        },
+        {
+            "id": "02",
+            "nombre": "Swift"
+        },
+        {
+            "id": "03",
+            "nombre": "TypeScript"
+        },
+        {
+            "id": "04",
+            "nombre": "Go"
+        },
+        {
+            "id": "05",
+            "nombre": "Ruby"
+        },
+        {
+            "id": "06",
+            "nombre": "Groovy"
+        },
+        {
+            "id": "07",
+            "nombre": "Javascript"
+        },
+        {
+            "id": "08",
+            "nombre": "Java"
+        },
+        {
+            "id": "09",
+            "nombre": "Python"
+        },
+        {
+            "id": "10",
+            "nombre": "Scala"
+        },
+        {
+            "id": "11",
+            "nombre": "PHP"
+        },
+        {
+            "id": "12",
+            "nombre": "Bash/Shell"
+        },
+        {
+            "id": "13",
+            "nombre": "CSS"
+        },
+        {
+            "id": "14",
+            "nombre": "C"
+        },
+        {
+            "id": "15",
+            "nombre": "HTML"
+        },
+        {
+            "id": "16",
+            "nombre": "C#"
+        },
+        {
+            "id": "17",
+            "nombre": "SQL"
+        },
+        {
+            "id": "18",
+            "nombre": "C++"
+        },
+        {
+            "id": "19",
+            "nombre": "VBA"
+        },
+        {
+            "id": "20",
+            "nombre": "R"
+        },
+        {
+            "id": "21",
+            "nombre": "COBOL"
+        },
+        {
+            "id": "22",
+            "nombre": "ABAP"
+        },
+        {
+            "id": "23",
+            "nombre": "Perl"
+        },
+        {
+            "id": "24",
+            "nombre": "Objective-C"
+        },
+        {
+            "id": "25",
+            "nombre": "PowerShell"
+        },
+        {
+            "id": "26",
+            "nombre": "Delphi"
+        },
+        {
+            "id": "27",
+            "nombre": "Dart"
+        },
+        {
+            "id": "28",
+            "nombre": "ActionScript"
+        },
+        {
+            "id": "29",
+            "nombre": "Assembler"
+        },
+        {
+            "id": "30",
+            "nombre": "Matlab"
+        },
+        {
+            "id": "31",
+            "nombre": "Smalltalk"
+        },
+        {
+            "id": "32",
+            "nombre": "Apex"
+        },
+        {
+            "id": "33",
+            "nombre": "Rust"
+        },
+        {
+            "id": "34",
+            "nombre": "PL/SQL"
+        },
+        {
+            "id": "35",
+            "nombre": "Elixir"
+        },
+        {
+            "id": "36",
+            "nombre": "Genexus"
+        },
+        {
+            "id": "37",
+            "nombre": "Erlang"
+        },
+        {
+            "id": "38",
+            "nombre": "SASS"
+        },
+        {
+            "id": "99",
+            "nombre": "Ninguna de las anteriores"
+        }
+    ]
+}

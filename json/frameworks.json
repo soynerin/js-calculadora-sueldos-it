@@ -1,128 +1,148 @@
 {
-    "roles": [
+    "frameworks": [
         {
             "id": "01",
-            "nombre": "Developer"
+            "nombre": "Node.js"
         },
         {
             "id": "02",
-            "nombre": "SysAdmin / DevOps / SRE"
+            "nombre": "Bootstrap"
         },
         {
             "id": "03",
-            "nombre": "Technical Leader"
+            "nombre": "jQuery"
         },
         {
             "id": "04",
-            "nombre": "QA / Tester"
+            "nombre": "React.js"
         },
         {
             "id": "05",
-            "nombre": "Manager / Director"
+            "nombre": "Angular"
         },
         {
             "id": "06",
-            "nombre": "HelpDesk"
+            "nombre": ".NET Core"
         },
         {
             "id": "07",
-            "nombre": "Project Manager"
+            "nombre": "Spring"
         },
         {
             "id": "08",
-            "nombre": "Architect"
+            "nombre": "Hibernate"
         },
         {
             "id": "09",
-            "nombre": "Data Scientist / DataEngineer"
+            "nombre": "WordPress"
         },
         {
             "id": "10",
-            "nombre": "Consultant"
+            "nombre": "Django"
         },
         {
             "id": "11",
-            "nombre": "BI Analyst / Data Analyst"
+            "nombre": "Vue.js"
         },
         {
             "id": "12",
-            "nombre": "Networking"
+            "nombre": "Flask"
         },
         {
             "id": "13",
-            "nombre": "Business Analyst"
+            "nombre": "Laravel"
         },
         {
             "id": "14",
-            "nombre": "Infosec"
+            "nombre": "SAP"
         },
         {
             "id": "15",
-            "nombre": "UX"
+            "nombre": "Spark"
         },
         {
             "id": "16",
-            "nombre": "Recruiter / HR"
+            "nombre": "Symfony"
         },
         {
             "id": "17",
-            "nombre": "DBA"
+            "nombre": "Hadoop"
         },
         {
             "id": "18",
-            "nombre": "Designer"
+            "nombre": "Cordova"
         },
         {
             "id": "19",
-            "nombre": "Product Manager"
+            "nombre": "TensorFlow"
         },
         {
             "id": "20",
-            "nombre": "Scrum Master"
+            "nombre": "Rails"
         },
         {
             "id": "21",
-            "nombre": "VP / C-Level"
+            "nombre": "Drupal"
         },
         {
             "id": "22",
-            "nombre": "Sales / Pre-Sales"
+            "nombre": "CodeIgniter"
         },
         {
             "id": "23",
-            "nombre": "Middleware"
+            "nombre": "Flutter"
         },
         {
             "id": "24",
-            "nombre": "Finance"
+            "nombre": "Akka"
         },
         {
             "id": "25",
-            "nombre": "Functional Analyst"
+            "nombre": "SwiftUI"
         },
         {
             "id": "26",
-            "nombre": "Storage / Backup"
+            "nombre": "Torch"
         },
         {
             "id": "27",
-            "nombre": "NLP"
+            "nombre": "Magento"
         },
         {
             "id": "28",
-            "nombre": "Technical Writer"
+            "nombre": "Pandas"
         },
         {
             "id": "29",
-            "nombre": "Technical Support"
+            "nombre": "Vertx"
         },
         {
             "id": "30",
-            "nombre": "DevOps"
+            "nombre": "Genexus"
+        },
+        {
+            "id": "31",
+            "nombre": "Odoo"
+        },
+        {
+            "id": "32",
+            "nombre": "Selenium"
+        },
+        {
+            "id": "33",
+            "nombre": "Qlik"
+        },
+        {
+            "id": "34",
+            "nombre": "Ionic"
+        },
+        {
+            "id": "35",
+            "nombre": "Yii2"
         },
         {
             "id": "99",
-            "nombre": "Otros"
+            "nombre": "Ninguna de las anteriores"
         }
     ]
 }

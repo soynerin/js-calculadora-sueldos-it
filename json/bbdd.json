@@ -1,0 +1,104 @@
+{
+    "bbdd": [
+        {
+            "id": "01",
+            "nombre": "MySQL"
+        },
+        {
+            "id": "02",
+            "nombre": "Microsoft SQL Server"
+        },
+        {
+            "id": "03",
+            "nombre": "PostgreSQL"
+        },
+        {
+            "id": "04",
+            "nombre": "Oracle"
+        },
+        {
+            "id": "05",
+            "nombre": "MongoDB"
+        },
+        {
+            "id": "06",
+            "nombre": "MariaDB"
+        },
+        {
+            "id": "07",
+            "nombre": "ElasticSearch"
+        },
+        {
+            "id": "08",
+            "nombre": "Redis"
+        },
+        {
+            "id": "09",
+            "nombre": "SQLite"
+        },
+        {
+            "id": "10",
+            "nombre": "Amazon DynamoDB"
+        },
+        {
+            "id": "11",
+            "nombre": "Microsoft Azure"
+        },
+        {
+            "id": "12",
+            "nombre": "Amazon RDS/Aurora"
+        },
+        {
+            "id": "13",
+            "nombre": "Cassandra"
+        },
+        {
+            "id": "14",
+            "nombre": "Google Cloud Storage"
+        },
+        {
+            "id": "15",
+            "nombre": "IBM Db2"
+        },
+        {
+            "id": "16",
+            "nombre": "Amazon Redshift"
+        },
+        {
+            "id": "17",
+            "nombre": "Teradata"
+        },
+        {
+            "id": "18",
+            "nombre": "Apache Hive"
+        },
+        {
+            "id": "19",
+            "nombre": "HANA"
+        },
+        {
+            "id": "20",
+            "nombre": "Sybase"
+        },
+        {
+            "id": "21",
+            "nombre": "Informix"
+        },
+        {
+            "id": "22",
+            "nombre": "Apache HBase"
+        },
+        {
+            "id": "23",
+            "nombre": "Neo4j"
+        },
+        {
+            "id": "24",
+            "nombre": "ProxySQL"
+        },        
+        {
+            "id": "99",
+            "nombre": "Ninguna de las anteriores"
+        }
+    ]
+}
