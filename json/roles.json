@@ -1,0 +1,128 @@
+{
+    "roles": [
+        {
+            "id": "01",
+            "nombre": "Developer"
+        },
+        {
+            "id": "02",
+            "nombre": "SysAdmin / DevOps / SRE"
+        },
+        {
+            "id": "03",
+            "nombre": "Technical Leader"
+        },
+        {
+            "id": "04",
+            "nombre": "QA / Tester"
+        },
+        {
+            "id": "05",
+            "nombre": "Manager / Director"
+        },
+        {
+            "id": "06",
+            "nombre": "HelpDesk"
+        },
+        {
+            "id": "07",
+            "nombre": "Project Manager"
+        },
+        {
+            "id": "08",
+            "nombre": "Architect"
+        },
+        {
+            "id": "09",
+            "nombre": "Data Scientist / DataEngineer"
+        },
+        {
+            "id": "10",
+            "nombre": "Consultant"
+        },
+        {
+            "id": "11",
+            "nombre": "BI Analyst / Data Analyst"
+        },
+        {
+            "id": "12",
+            "nombre": "Networking"
+        },
+        {
+            "id": "13",
+            "nombre": "Business Analyst"
+        },
+        {
+            "id": "14",
+            "nombre": "Infosec"
+        },
+        {
+            "id": "15",
+            "nombre": "UX"
+        },
+        {
+            "id": "16",
+            "nombre": "Recruiter / HR"
+        },
+        {
+            "id": "17",
+            "nombre": "DBA"
+        },
+        {
+            "id": "18",
+            "nombre": "Designer"
+        },
+        {
+            "id": "19",
+            "nombre": "Product Manager"
+        },
+        {
+            "id": "20",
+            "nombre": "Scrum Master"
+        },
+        {
+            "id": "21",
+            "nombre": "VP / C-Level"
+        },
+        {
+            "id": "22",
+            "nombre": "Sales / Pre-Sales"
+        },
+        {
+            "id": "23",
+            "nombre": "Middleware"
+        },
+        {
+            "id": "24",
+            "nombre": "Finance"
+        },
+        {
+            "id": "25",
+            "nombre": "Functional Analyst"
+        },
+        {
+            "id": "26",
+            "nombre": "Storage / Backup"
+        },
+        {
+            "id": "27",
+            "nombre": "NLP"
+        },
+        {
+            "id": "28",
+            "nombre": "Technical Writer"
+        },
+        {
+            "id": "29",
+            "nombre": "Technical Support"
+        },
+        {
+            "id": "30",
+            "nombre": "DevOps"
+        },
+        {
+            "id": "31",
+            "nombre": "Otros"
+        }
+    ]
+}
