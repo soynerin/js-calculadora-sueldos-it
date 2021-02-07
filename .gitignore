@@ -1,3 +1,9 @@
 
 *.7z
 prepros.config
+
+node_modules
+dist
+
+# Local Netlify folder
+.netlify
