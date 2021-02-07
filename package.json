@@ -1,0 +1,16 @@
+{
+  "name": "calculadora-sueldos-it",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "Neri Espinola",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "netlify-plugin-minify-html": "^0.2.3"
+  }
+}
