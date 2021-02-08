@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/46486559e1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -208,7 +211,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" alt="" width="48" />
@@ -220,82 +223,188 @@
                         <a class="nav-link" aria-current="page" href="#">INICIO</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">
-                        Buscar
-                    </button>
-                </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <main class="container my-5">
-        <div class="starter-template text-center py-5 px-3">
-            <h1>Bienvenido a nuestra Calculadora de Sueldos</h1>
-            <p class="lead">
-                ¿Estás en búsqueda de tu primer trabajo IT o ya es hora de
-                querer cambiar el actual? ¿Estás al tanto de cuánto se está
-                pagando en el mercado? ¡Tranquilo! Con nuestro sistema de
-                cálculos te ayudaremos a saber cuánto debes pedir para tu
-                próximo trabajo.
-            </p>
-        </div>
+    <header>
 
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-primary shadow-lg rounded">
-                    <div class="card-body">
-                        <h3 class="card-title">Primer Trabajo</h3>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quam excepturi, possimus
-                            veritatis quod maxime, incidunt eius eaque
-                            quisquam facere illo doloremque aliquid atque
-                            provident laudantium, accusantium debitis?
-                            Perferendis, debitis architecto.
-                        </p>
-                        <a href="#" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop" id="firstJobButton">Haz click aquí</a>
-                    </div>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1>Bienvenido a nuestra Calculadora de Sueldos</h1>
+                    <p class="lead">
+                        ¿Estás en búsqueda de tu primer trabajo IT o ya es hora de
+                        querer cambiar el actual? ¿Estás al tanto de cuánto se está
+                        pagando en el mercado? ¡Tranquilo! Con nuestro sistema de
+                        cálculos te ayudaremos a saber cuánto debes pedir para tu
+                        próximo trabajo.
+                    </p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-info shadow-lg rounded">
-                    <div class="card-body">
-                        <h3 class="card-title">Experimentado</h3>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Nulla consectetur eos corporis
-                            temporibus quas molestiae fugiat laudantium.
-                            Dolores nobis aspernatur architecto nemo
-                            voluptatem similique alias dolor obcaecati fuga?
-                            Nam, nesciunt?
-                        </p>
-                        <a href="#" class="btn btn-outline-light" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop" id="newJobButton">Haz click aquí</a>
+        </section>
+
+    </header>
+
+    <main>
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card text-white bg-primary shadow-lg rounded">
+                            <div class="card-body">
+                                <h3 class="card-title">Primer Trabajo</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Quam excepturi, possimus
+                                    veritatis quod maxime, incidunt eius eaque
+                                    quisquam facere illo doloremque aliquid atque
+                                    provident laudantium, accusantium debitis?
+                                    Perferendis, debitis architecto.
+                                </p>
+                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop" id="firstJobButton">Haz click aquí</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-warning shadow-lg rounded">
-                    <div class="card-body">
-                        <h3 class="card-title">Quiero aportar</h3>
-                        <p class="card-text">
-                            Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. Quos cumque maiores
-                            distinctio. Debitis dolorem quod et minima
-                            inventore consequatur fugit dicta, ducimus
-                            nulla, quidem mollitia, dolor assumenda
-                            perferendis cumque eveniet!
-                        </p>
-                        <a href="#" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop" id="newJobButton">Haz click aquí</a>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card text-white bg-info shadow-lg rounded">
+                            <div class="card-body">
+                                <h3 class="card-title">Experimentado</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Nulla consectetur eos corporis
+                                    temporibus quas molestiae fugiat laudantium.
+                                    Dolores nobis aspernatur architecto nemo
+                                    voluptatem similique alias dolor obcaecati fuga?
+                                    Nam, nesciunt?
+                                </p>
+                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop" id="newJobButton">Haz click aquí</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card text-white bg-warning shadow-lg rounded">
+                            <div class="card-body">
+                                <h3 class="card-title">Quiero aportar</h3>
+                                <p class="card-text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quos cumque maiores
+                                    distinctio. Debitis dolorem quod et minima
+                                    inventore consequatur fugit dicta, ducimus
+                                    nulla, quidem mollitia, dolor assumenda
+                                    perferendis cumque eveniet!
+                                </p>
+                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop" id="newJobButton">Haz click aquí</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Mi Lugar</h4>
+                                <span>Pilar, Buenos Aires, Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Mi Contacto</h4>
+                                <span>+54 11 6857XXXX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Email</h4>
+                                <span>neri.agustin.es@outlook.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <!-- <a href="index.html"><img src="img/logo.png" class="img-fluid" alt="logo"
+                                        width="100"></a> -->
+                                <div class="footer-widget-heading">
+                                    <h3>Calculadora de Sueldos IT</h3>
+                                </div>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor
+                                    incididuntut consec tetur adipisicing
+                                    elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Seguíme</span>
+                                <a href="#"><i class="fab fa-github github-bg"></i></a>
+                                <a href="#"><i class="fab fa-linkedin linkedin-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Enalces útiles</h3>
+                            </div>
+                            <ul>
+                                <li><a href="https://sueldos.openqube.io/encuesta-sueldos-2020.02/">openqube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Suscríbete</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>No deje de suscribirse a nuestros nuevos temas, por favor complete el formulario a
+                                    continuación.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Correo Electrónico">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2021, Todos los derechos reservados <a href="https://soynerin.github.io"
+                                    target="_blank">soyNerin</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
