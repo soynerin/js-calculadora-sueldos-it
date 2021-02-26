@@ -36,30 +36,21 @@
                     <div class="row g-3">
                         <div class="col-md-5 col-lg-4 order-md-last">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="text-muted">Sueldo Neto</span>
-                                <span class="badge bg-secondary rounded-pill">3</span>
+                                <span class="text-muted">Sueldo Bruto</span>
+                                <span class="badge bg-secondary rounded-pill"></span>
                             </h4>
                             <ul class="list-group mb-3">
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 class="my-0">First description</h6>
-                                        <small class="text-muted">Brief description</small>
-                                    </div>
-                                    <span class="text-muted">$12000</span>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>País</strong>
+                                    <span class="badge bg-primary rounded-pill" id="countrySelectedDescription"></span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 class="my-0">Second description</h6>
-                                        <small class="text-muted">Brief description</small>
-                                    </div>
-                                    <span class="text-muted">$18000</span>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Región</strong>
+                                    <span class="badge bg-primary rounded-pill" id="regionSelectedDescription"></span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 class="my-0">Third description</h6>
-                                        <small class="text-muted">Brief description</small>
-                                    </div>
-                                    <span class="text-muted">$50000</span>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Rol/Puesto</strong>
+                                    <span class="badge bg-primary rounded-pill" id="puestoSelectedDescription"></span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
@@ -70,9 +61,9 @@
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <span>Total (ARS)</span>
-                                    <span>Total (USD)</span>
-                                    <strong>AR$ 163000</strong>
-                                    <strong>U$D 1000</strong>
+                                    <!-- <span>Total (USD)</span> -->
+                                    <strong id="totalSalaryArs"></strong>
+                                    <!-- <strong id="totalSalaryUsd">U$D 1000</strong> -->
                                 </li>
                             </ul>
 
@@ -87,7 +78,7 @@
                             <h4 class="mb-3">Completar</h4>
                             <form class="needs-validation" novalidate>
                                 <div class="row g-3">
-                                    <div class="col-sm-6">
+                                    <!-- <div class="col-sm-6">
                                         <label for="firstName" class="form-label">Nombre</label>
                                         <input type="text" class="form-control" id="firstName" placeholder="" value=""
                                             required>
@@ -113,13 +104,13 @@
                                         <div class="invalid-feedback">
                                             Por favor seleccioná un correo electrónico válido.
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-md-6">
                                         <label for="country" class="form-label">País</label>
                                         <select class="form-select" id="country" required>
-                                            <option value="">Elegir...</option>
-                                            <option>Argentina</option>
+                                            <option value="0">Elegir...</option>
+                                            <option value="54">Argentina</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná un país.
@@ -127,12 +118,12 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="provincias" class="form-label">Provincia</label>
+                                        <label for="provincias" class="form-label">Región</label>
                                         <select class="form-select" id="provincias" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
-                                            Por favor seleccioná una provincia.
+                                            Por favor seleccioná una región.
                                         </div>
                                     </div>
 
@@ -251,7 +242,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
-                        <div class="card text-white bg-primary shadow-lg rounded">
+                        <div class="card text-white bg-success shadow-lg rounded">
                             <div class="card-body">
                                 <h3 class="card-title">Primer Trabajo</h3>
                                 <p class="card-text">
@@ -410,6 +401,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="js/functions/base.js" defer></script>
+    <script src="js/classes/pais.js" defer></script>
     <script src="js/classes/region.js" defer></script>
     <script src="js/classes/rol.js" defer></script>
     <script src="js/classes/participante.js" defer></script>

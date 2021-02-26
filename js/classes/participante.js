@@ -1,6 +1,7 @@
 /**
  * Representa un Participante
  * @date 2021-01-22
+ * @param {Pais} Pais -
  * @param {Region} region - Determinará el porcentaje de participantes por región de la Argentina
  * @param {Rol} rol - Porcentaje de participantes por tipo de rol
  * @param {number} experiencia - Años de experiencia
@@ -9,7 +10,8 @@
  * @returns {any}
  */
 class Participante {
-    constructor(region, rol, experiencia, educacion, genero) {
+    constructor(pais, region, rol, experiencia, educacion, genero) {
+        this.pais = pais;
         this.region = region;
         this.rol = rol;
         this.experiencia = experiencia;
@@ -17,43 +19,76 @@ class Participante {
         this.genero = genero;
         this.salarioMinimo = 21600;
         this.salario = this.salarioMinimo;
+        this.salarioActualizado = 0;
 
-        this.setRegion = function (description, id = null) {
+        this.setPais = function (paisSeleccionado) {
+            if (paisSeleccionado) {
+                if (paisSeleccionado.id === 0) {
+                    this.salario = this.salarioActualizado;
+                } else {
+                    this.pais = paisSeleccionado;
+                    this.actualizarSueldoPretendido(this.pais);
+                }
+            } else {
+                console.error(
+                    "El país seleccionado no está en nuestra Base de Datos"
+                );
+            }
 
-            let regionSeleccionada = regiones.find(x => x.description.toLowerCase() == description.toLowerCase());
-            if (regionSeleccionada) {
-                this.region = regionSeleccionada;
-                this.actualizarSueldoPretendido(this.region);
-                console.log(this);
-                console.log(`REGION: ${this.region.description}`);
-                console.info(`La remuneración pretendida a solicitar (en bruto): $ ${this.salario}`);
-            }
-            else {
-                console.error("La región ingresada no esta en nuestra base de datos");
-            }
+            console.log(this);
         };
 
-        this.setRol = function (description, id = null) {
-            let rolSeleccionado = roles.find(x => x.description.toLowerCase() == description.toLowerCase());
+        this.setRegion = function (regionSeleccionada) {
+            if (regionSeleccionada) {
+                if (regionSeleccionada.id === 0) {
+                    this.salario = this.salarioActualizado;
+                } else {
+                    this.region = regionSeleccionada;
+                    this.actualizarSueldoPretendido(this.region);
+                }
+            } else {
+                console.error(
+                    "La región ingresada no esta en nuestra base de datos"
+                );
+            }
+
+            console.log(this);
+        };
+
+        this.setRol = function (rolSeleccionado) {
             if (rolSeleccionado) {
-                this.rol = rolSeleccionado;
-                this.actualizarSueldoPretendido(this.rol);
-                console.log(this);
-                console.log(`ROL: ${this.rol.description}`);
-                console.info(`La remuneración pretendida a solicitar (en bruto): $ ${this.salario}`);
+                if (rolSeleccionado.id === 0) {
+                    this.salario = this.salarioActualizado;
+                } else {
+                    this.rol = rolSeleccionado;
+                    this.actualizarSueldoPretendido(this.rol);
+                }
+            } else {
+                console.error(
+                    "La rol ingresado no esta en nuestra base de datos"
+                );
             }
-            else {
-                alert("El rol ingresado no esta en nuestra base de datos");
-            }
+
+            console.log(this);
         };
 
         this.actualizarSueldoPretendido = function (estado) {
+            if (estado instanceof Pais) {
+                this.salario = getSalarioPorPais(this.pais.id);
+                this.salarioActualizado =
+                    this.salarioActualizado + this.salario;
+            }
+
             if (estado instanceof Region) {
-                this.salario = this.salario * getSalarioPorRegion(this.region.id);
+                this.salario = getSalarioPorRegion(this.region.id);
+                this.salarioActualizado =
+                    this.salarioActualizado + this.salario;
             }
 
             if (estado instanceof Rol) {
-                this.salario = this.salario * getSalarioPorRol(this.rol.id);
+                this.salario = getSalarioPorRol(this.rol.id);
+                this.salarioActualizado =
+                    this.salarioActualizado + this.salario;
             }
         };
     }
