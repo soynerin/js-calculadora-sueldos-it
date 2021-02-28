@@ -4,30 +4,31 @@
  * @param {Pais} Pais -
  * @param {Region} region - Determinará el porcentaje de participantes por región de la Argentina
  * @param {Rol} rol - Porcentaje de participantes por tipo de rol
- * @param {number} experiencia - Años de experiencia
- * @param {Educacion} educacion - Nivel de estudios alcanzado y estado actual
- * @param {Genero} genero - Identidad de género
+ * @param {Tecnologia} tecnologia - 
+ * @param {Lenguaje} lenguaje - 
+ * @param {Framework} framework - 
+ * @param {BaseDato} baseDatos - 
  * @returns {any}
  */
 class Participante {
-    constructor(pais, region, rol, experiencia, educacion, genero) {
+    constructor(pais, region, rol, tecnologia, lenguaje, framework, baseDatos) {
         this.pais = pais;
         this.region = region;
         this.rol = rol;
-        this.experiencia = experiencia;
-        this.educacion = educacion;
-        this.genero = genero;
+        this.tecnologia = tecnologia;
+        this.lenguaje = lenguaje;
+        this.framework = framework;
+        this.baseDatos = baseDatos;
         this.salarioMinimo = 21600;
-        this.salario = this.salarioMinimo;
-        this.salarioActualizado = 0;
+        this.salario = new Salario();
 
         this.setPais = function (paisSeleccionado) {
             if (paisSeleccionado) {
                 if (paisSeleccionado.id === 0) {
-                    this.salario = this.salarioActualizado;
+                    this.salario.setPaisSalario(0);
                 } else {
                     this.pais = paisSeleccionado;
-                    this.actualizarSueldoPretendido(this.pais);
+                    this.salario.setPaisSalario(getSalarioPorPais(this.pais.id));
                 }
             } else {
                 console.error(
@@ -41,10 +42,10 @@ class Participante {
         this.setRegion = function (regionSeleccionada) {
             if (regionSeleccionada) {
                 if (regionSeleccionada.id === 0) {
-                    this.salario = this.salarioActualizado;
+                    this.salario.setRegionSalario(0);
                 } else {
                     this.region = regionSeleccionada;
-                    this.actualizarSueldoPretendido(this.region);
+                    this.salario.setRegionSalario(getSalarioPorRegion(this.region.id));
                 }
             } else {
                 console.error(
@@ -58,10 +59,10 @@ class Participante {
         this.setRol = function (rolSeleccionado) {
             if (rolSeleccionado) {
                 if (rolSeleccionado.id === 0) {
-                    this.salario = this.salarioActualizado;
+                    this.salario.setRolSalario(0);
                 } else {
                     this.rol = rolSeleccionado;
-                    this.actualizarSueldoPretendido(this.rol);
+                    this.salario.setRolSalario(getSalarioPorRol(this.rol.id));
                 }
             } else {
                 console.error(
@@ -72,24 +73,72 @@ class Participante {
             console.log(this);
         };
 
-        this.actualizarSueldoPretendido = function (estado) {
-            if (estado instanceof Pais) {
-                this.salario = getSalarioPorPais(this.pais.id);
-                this.salarioActualizado =
-                    this.salarioActualizado + this.salario;
+        this.setTecnologia = function (tecnologiaSeleccionada) {
+            if (tecnologiaSeleccionada) {
+                if (tecnologiaSeleccionada.id === 0) {
+                    this.salario.setTecnologiaSalario(0);
+                } else {
+                    this.tecnologia = tecnologiaSeleccionada;
+                    this.salario.setTecnologiaSalario(getSalarioPorTecnologia(this.tecnologia.id));
+                }
+            } else {
+                console.error(
+                    "La tecnología o plataforma ingresada no esta en nuestra base de datos"
+                );
             }
 
-            if (estado instanceof Region) {
-                this.salario = getSalarioPorRegion(this.region.id);
-                this.salarioActualizado =
-                    this.salarioActualizado + this.salario;
+            console.log(this);
+        };
+
+        this.setLenguaje = function (lenguajeSeleccionado) {
+            if (lenguajeSeleccionado) {
+                if (lenguajeSeleccionado.id === 0) {
+                    this.salario.setLenguajeSalario(0);
+                } else {
+                    this.lenguaje = lenguajeSeleccionado;
+                    this.salario.setLenguajeSalario(getSalarioPorLenguaje(this.lenguaje.id));
+                }
+            } else {
+                console.error(
+                    "El lenguaje ingresado no esta en nuestra base de datos"
+                );
             }
 
-            if (estado instanceof Rol) {
-                this.salario = getSalarioPorRol(this.rol.id);
-                this.salarioActualizado =
-                    this.salarioActualizado + this.salario;
+            console.log(this);
+        };
+
+        this.setFramework = function (frameworkSeleccionado) {
+            if (frameworkSeleccionado) {
+                if (frameworkSeleccionado.id === 0) {
+                    this.salario.setFrameworkSalario(0);
+                } else {
+                    this.framework = frameworkSeleccionado;
+                    this.salario.setFrameworkSalario(getSalarioPorFramework(this.framework.id));
+                }
+            } else {
+                console.error(
+                    "El framework o librería ingresada no esta en nuestra base de datos"
+                );
             }
+
+            console.log(this);
+        };
+
+        this.setBaseDato = function (bbddSeleccionada) {
+            if (bbddSeleccionada) {
+                if (bbddSeleccionada.id === 0) {
+                    this.salario.setBbddSalario(0);
+                } else {
+                    this.baseDatos = bbddSeleccionada;
+                    this.salario.setBbddSalario(getSalarioPorBbdd(this.baseDatos.id));
+                }
+            } else {
+                console.error(
+                    "La Base de Datos ingresada no esta en nuestra base de datos"
+                );
+            }
+
+            console.log(this);
         };
     }
 }

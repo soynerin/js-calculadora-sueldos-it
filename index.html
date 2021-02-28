@@ -52,6 +52,22 @@
                                     <strong>Rol/Puesto</strong>
                                     <span class="badge bg-primary rounded-pill" id="puestoSelectedDescription"></span>
                                 </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Plataforma/Tecnología</strong>
+                                    <span class="badge bg-primary rounded-pill" id="tecnologiaSelectedDescription"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Lenguaje</strong>
+                                    <span class="badge bg-primary rounded-pill" id="lenguajeSelectedDescription"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Framework/Librería</strong>
+                                    <span class="badge bg-primary rounded-pill" id="frameworkSelectedDescription"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Base de Datos</strong>
+                                    <span class="badge bg-primary rounded-pill" id="bbddSelectedDescription"></span>
+                                </li>
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <div class="text-success">
                                         <h6 class="my-0">Retenciones</h6>
@@ -130,7 +146,7 @@
                                     <div class="col-md-12">
                                         <label for="roles" class="form-label">Rol / Puesto</label>
                                         <select class="form-select" id="roles" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná un Rol.
@@ -140,7 +156,7 @@
                                     <div class="col-md-6">
                                         <label for="plataformas" class="form-label">Plataforma / Tecnología</label>
                                         <select class="form-select" id="plataformas" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná una Plataforma.
@@ -150,7 +166,7 @@
                                     <div class="col-md-6">
                                         <label for="lenguajes" class="form-label">Lenguajes de Programación</label>
                                         <select class="form-select" id="lenguajes" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná un Lenguaje.
@@ -161,7 +177,7 @@
                                         <label for="frameworks" class="form-label">Frameworks y
                                             Librerías</label>
                                         <select class="form-select" id="frameworks" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná un Framework/Librería.
@@ -171,7 +187,7 @@
                                     <div class="col-md-6">
                                         <label for="bbdd" class="form-label">Bases de Datos</label>
                                         <select class="form-select" id="bbdd" required>
-                                            <option value="">Elegir...</option>
+                                            <option value="0">Elegir...</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Por favor seleccioná una Base de Datos.
@@ -401,9 +417,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="js/functions/base.js" defer></script>
+    <script src="js/classes/salario.js" defer></script>
     <script src="js/classes/pais.js" defer></script>
     <script src="js/classes/region.js" defer></script>
     <script src="js/classes/rol.js" defer></script>
+    <script src="js/classes/tecnologia.js" defer></script>
+    <script src="js/classes/lenguaje.js" defer></script>
+    <script src="js/classes/framework.js" defer></script>
+    <script src="js/classes/bbdd.js" defer></script>
     <script src="js/classes/participante.js" defer></script>
     <script src="js/app.js" defer></script>
 

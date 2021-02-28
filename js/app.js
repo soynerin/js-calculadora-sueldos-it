@@ -36,6 +36,11 @@ const totalSalaryArs = document.getElementById("totalSalaryArs");
 const countrySelected = document.getElementById("country");
 const regionSelected = document.getElementById("provincias");
 const rolSelected = document.getElementById("roles");
+const tecnologiaSelected = document.getElementById("plataformas");
+const lenguajeSelected = document.getElementById("lenguajes");
+const frameworkSelected = document.getElementById("frameworks");
+const bbddSelected = document.getElementById("bbdd");
+
 const participante = new Participante();
 
 countrySelected.addEventListener("change", (event) => {
@@ -53,7 +58,8 @@ countrySelected.addEventListener("change", (event) => {
         "countrySelectedValueSalary"
     );
 
-    totalSalaryArs.innerText = `AR$ ${participante.salario}`;
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 });
 
 regionSelected.addEventListener("change", (event) => {
@@ -70,7 +76,8 @@ regionSelected.addEventListener("change", (event) => {
         "regionSelectedValueSalary"
     );
 
-    totalSalaryArs.innerText = `AR$ ${participante.salario}`;
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 });
 
 rolSelected.addEventListener("change", (event) => {
@@ -83,5 +90,62 @@ rolSelected.addEventListener("change", (event) => {
 
     setSalaryItem(event, "puestoSelectedDescription", "");
 
-    totalSalaryArs.innerText = `AR$ ${participante.salario}`;
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+});
+
+tecnologiaSelected.addEventListener("change", (event) => {
+    const id = parseInt(event.target.value, 10);
+    const description =
+        event.target.options[event.target.selectedIndex].text;
+    const tecnologia = new Tecnologia(id, description);
+
+    participante.setTecnologia(tecnologia);
+
+    setSalaryItem(event, "tecnologiaSelectedDescription", "");
+
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+});
+
+lenguajeSelected.addEventListener("change", (event) => {
+    const id = parseInt(event.target.value, 10);
+    const description =
+        event.target.options[event.target.selectedIndex].text;
+    const lenguaje = new Lenguaje(id, description);
+
+    participante.setLenguaje(lenguaje);
+
+    setSalaryItem(event, "lenguajeSelectedDescription", "");
+
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+});
+
+frameworkSelected.addEventListener("change", (event) => {
+    const id = parseInt(event.target.value, 10);
+    const description =
+        event.target.options[event.target.selectedIndex].text;
+    const framework = new Framework(id, description);
+
+    participante.setFramework(framework);
+
+    setSalaryItem(event, "frameworkSelectedDescription", "");
+
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+});
+
+bbddSelected.addEventListener("change", (event) => {
+    const id = parseInt(event.target.value, 10);
+    const description =
+        event.target.options[event.target.selectedIndex].text;
+    const bbdd = new BaseDato(id, description);
+
+    participante.setBaseDato(bbdd);
+
+    setSalaryItem(event, "bbddSelectedDescription", "");
+
+    participante.salario.setSalarioBruto();
+    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 });

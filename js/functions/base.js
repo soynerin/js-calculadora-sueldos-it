@@ -2,14 +2,8 @@ const setSalaryItem = (event, idElementDescription, idElementValue) => {
     const valueOption = event.target.value;
     const textOption = event.target.options[event.target.selectedIndex].text;
     const description = document.getElementById(idElementDescription);
-    // const value = document.getElementById(idElementValue);
 
     description.innerText = valueOption != "" ? textOption : "";
-    // value.innerText = `AR$ ${valueOption}`;
-};
-
-const updateTotalSalary = (id) => {
-    return getSalarioPorRegion(id);
 };
 
 const cargarComboPorJson = (element, url, sortById = true) => {
@@ -262,6 +256,432 @@ const getSalarioPorRol = (id) => {
         30: function () {
             return 30000;
         },
+    };
+    return salario[id]();
+};
+
+const getSalarioPorTecnologia = (id) => {
+    var salario = {
+        1: function () {
+            return 1000;
+        },
+        2: function () {
+            return 2000;
+        },
+        3: function () {
+            return 3000;
+        },
+        4: function () {
+            return 4000;
+        },
+        5: function () {
+            return 5000;
+        },
+        6: function () {
+            return 6000;
+        },
+        7: function () {
+            return 7000;
+        },
+        8: function () {
+            return 8000;
+        },
+        9: function () {
+            return 9000;
+        },
+        10: function () {
+            return 10000;
+        },
+        11: function () {
+            return 11000;
+        },
+        12: function () {
+            return 12000;
+        },
+        13: function () {
+            return 13000;
+        },
+        14: function () {
+            return 14000;
+        },
+        15: function () {
+            return 15000;
+        },
+        16: function () {
+            return 16000;
+        },
+        17: function () {
+            return 17000;
+        },
+        18: function () {
+            return 18000;
+        },
+        19: function () {
+            return 19000;
+        },
+        20: function () {
+            return 20000;
+        },
+        21: function () {
+            return 21000;
+        },
+        22: function () {
+            return 22000;
+        },
+        23: function () {
+            return 23000;
+        },
+        24: function () {
+            return 24000;
+        },
+        25: function () {
+            return 25000;
+        },
+        26: function () {
+            return 26000;
+        },
+        27: function () {
+            return 27000;
+        },
+        28: function () {
+            return 28000;
+        },
+        29: function () {
+            return 29000;
+        },
+        30: function () {
+            return 30000;
+        },
+        31: function () {
+            return 31000;
+        },
+        32: function () {
+            return 32000;
+        },
+        33: function () {
+            return 33000;
+        },
+        34: function () {
+            return 34000;
+        },
+        35: function () {
+            return 35000;
+        },
+        36: function () {
+            return 36000;
+        },
+        37: function () {
+            return 37000;
+        },
+    };
+    return salario[id]();
+};
+
+const getSalarioPorLenguaje = (id) => {
+    var salario = {
+        1: function () {
+            return 1000;
+        },
+        2: function () {
+            return 2000;
+        },
+        3: function () {
+            return 3000;
+        },
+        4: function () {
+            return 4000;
+        },
+        5: function () {
+            return 5000;
+        },
+        6: function () {
+            return 6000;
+        },
+        7: function () {
+            return 7000;
+        },
+        8: function () {
+            return 8000;
+        },
+        9: function () {
+            return 9000;
+        },
+        10: function () {
+            return 10000;
+        },
+        11: function () {
+            return 11000;
+        },
+        12: function () {
+            return 12000;
+        },
+        13: function () {
+            return 13000;
+        },
+        14: function () {
+            return 14000;
+        },
+        15: function () {
+            return 15000;
+        },
+        16: function () {
+            return 16000;
+        },
+        17: function () {
+            return 17000;
+        },
+        18: function () {
+            return 18000;
+        },
+        19: function () {
+            return 19000;
+        },
+        20: function () {
+            return 20000;
+        },
+        21: function () {
+            return 21000;
+        },
+        22: function () {
+            return 22000;
+        },
+        23: function () {
+            return 23000;
+        },
+        24: function () {
+            return 24000;
+        },
+        25: function () {
+            return 25000;
+        },
+        26: function () {
+            return 26000;
+        },
+        27: function () {
+            return 27000;
+        },
+        28: function () {
+            return 28000;
+        },
+        29: function () {
+            return 29000;
+        },
+        30: function () {
+            return 30000;
+        },
+        31: function () {
+            return 31000;
+        },
+        32: function () {
+            return 32000;
+        },
+        33: function () {
+            return 33000;
+        },
+        34: function () {
+            return 34000;
+        },
+        35: function () {
+            return 35000;
+        },
+        36: function () {
+            return 36000;
+        },
+        37: function () {
+            return 37000;
+        },
+        38: function () {
+            return 38000;
+        },
+    };
+    return salario[id]();
+};
+
+const getSalarioPorFramework = (id) => {
+    var salario = {
+        1: function () {
+            return 1000;
+        },
+        2: function () {
+            return 2000;
+        },
+        3: function () {
+            return 3000;
+        },
+        4: function () {
+            return 4000;
+        },
+        5: function () {
+            return 5000;
+        },
+        6: function () {
+            return 6000;
+        },
+        7: function () {
+            return 7000;
+        },
+        8: function () {
+            return 8000;
+        },
+        9: function () {
+            return 9000;
+        },
+        10: function () {
+            return 10000;
+        },
+        11: function () {
+            return 11000;
+        },
+        12: function () {
+            return 12000;
+        },
+        13: function () {
+            return 13000;
+        },
+        14: function () {
+            return 14000;
+        },
+        15: function () {
+            return 15000;
+        },
+        16: function () {
+            return 16000;
+        },
+        17: function () {
+            return 17000;
+        },
+        18: function () {
+            return 18000;
+        },
+        19: function () {
+            return 19000;
+        },
+        20: function () {
+            return 20000;
+        },
+        21: function () {
+            return 21000;
+        },
+        22: function () {
+            return 22000;
+        },
+        23: function () {
+            return 23000;
+        },
+        24: function () {
+            return 24000;
+        },
+        25: function () {
+            return 25000;
+        },
+        26: function () {
+            return 26000;
+        },
+        27: function () {
+            return 27000;
+        },
+        28: function () {
+            return 28000;
+        },
+        29: function () {
+            return 29000;
+        },
+        30: function () {
+            return 30000;
+        },
+        31: function () {
+            return 31000;
+        },
+        32: function () {
+            return 32000;
+        },
+        33: function () {
+            return 33000;
+        },
+        34: function () {
+            return 34000;
+        },
+        35: function () {
+            return 35000;
+        }
+    };
+    return salario[id]();
+};
+
+const getSalarioPorBbdd = (id) => {
+    var salario = {
+        1: function () {
+            return 1000;
+        },
+        2: function () {
+            return 2000;
+        },
+        3: function () {
+            return 3000;
+        },
+        4: function () {
+            return 4000;
+        },
+        5: function () {
+            return 5000;
+        },
+        6: function () {
+            return 6000;
+        },
+        7: function () {
+            return 7000;
+        },
+        8: function () {
+            return 8000;
+        },
+        9: function () {
+            return 9000;
+        },
+        10: function () {
+            return 10000;
+        },
+        11: function () {
+            return 11000;
+        },
+        12: function () {
+            return 12000;
+        },
+        13: function () {
+            return 13000;
+        },
+        14: function () {
+            return 14000;
+        },
+        15: function () {
+            return 15000;
+        },
+        16: function () {
+            return 16000;
+        },
+        17: function () {
+            return 17000;
+        },
+        18: function () {
+            return 18000;
+        },
+        19: function () {
+            return 19000;
+        },
+        20: function () {
+            return 20000;
+        },
+        21: function () {
+            return 21000;
+        },
+        22: function () {
+            return 22000;
+        },
+        23: function () {
+            return 23000;
+        },
+        24: function () {
+            return 24000;
+        }
     };
     return salario[id]();
 };
