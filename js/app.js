@@ -60,6 +60,8 @@ countrySelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 regionSelected.addEventListener("change", (event) => {
@@ -78,6 +80,8 @@ regionSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 rolSelected.addEventListener("change", (event) => {
@@ -92,6 +96,8 @@ rolSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 tecnologiaSelected.addEventListener("change", (event) => {
@@ -106,6 +112,8 @@ tecnologiaSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 lenguajeSelected.addEventListener("change", (event) => {
@@ -120,6 +128,8 @@ lenguajeSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 frameworkSelected.addEventListener("change", (event) => {
@@ -134,6 +144,8 @@ frameworkSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
 
 bbddSelected.addEventListener("change", (event) => {
@@ -148,4 +160,13 @@ bbddSelected.addEventListener("change", (event) => {
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+
+    calcularRetenciones();
 });
+
+function calcularRetenciones(){
+    
+    if (participante.salario.totalBruto > 0) {        
+        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
+    }
+}
