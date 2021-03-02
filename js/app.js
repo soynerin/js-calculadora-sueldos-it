@@ -25,6 +25,21 @@ function cargarListaBasesDatos() {
     cargarComboPorJson("bbdd", "json/bbdd.json", false);
 }
 
+function showSalarioMobileDialog() {
+    if ($(window).width() < 767) {
+        Toast.fire({
+            icon: 'info',
+            title: `Total Bruto: AR$ ${participante.salario.totalBruto}`
+        });
+    };
+}
+
+function calcularRetenciones() {
+    if (participante.salario.totalBruto > 0) {
+        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
+    }
+}
+
 cargarListaProvincias();
 cargarListaRoles();
 cargrListaPataformas();
@@ -62,6 +77,8 @@ countrySelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 regionSelected.addEventListener("change", (event) => {
@@ -82,6 +99,8 @@ regionSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 rolSelected.addEventListener("change", (event) => {
@@ -98,6 +117,8 @@ rolSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 tecnologiaSelected.addEventListener("change", (event) => {
@@ -113,6 +134,8 @@ tecnologiaSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 lenguajeSelected.addEventListener("change", (event) => {
@@ -128,6 +151,8 @@ lenguajeSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 frameworkSelected.addEventListener("change", (event) => {
@@ -143,6 +168,8 @@ frameworkSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
 bbddSelected.addEventListener("change", (event) => {
@@ -158,13 +185,10 @@ bbddSelected.addEventListener("change", (event) => {
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
 
     calcularRetenciones();
+
+    showSalarioMobileDialog();
 });
 
-function calcularRetenciones() {
-    if (participante.salario.totalBruto > 0) {
-        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
-    }
-}
 
 var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 var inlineQuote = document.querySelector("#quote");
