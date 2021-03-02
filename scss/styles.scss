@@ -30,4 +30,35 @@
     }
 }
 
+#quote {
+    font-size: 20px;
+}
+
+.buttonQuote {
+    margin-top: 20px;
+    background: red;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: auto;
+    padding: 1rem;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid #1abc9c;
+    color: #1abc9c;
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    font-family: "Roboto", sans-serif;
+
+    &:hover {
+        color: white;
+        background: #1abc9c;
+    }
+}
+
 @import "components/footer.scss";

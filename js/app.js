@@ -102,8 +102,7 @@ rolSelected.addEventListener("change", (event) => {
 
 tecnologiaSelected.addEventListener("change", (event) => {
     const id = parseInt(event.target.value, 10);
-    const description =
-        event.target.options[event.target.selectedIndex].text;
+    const description = event.target.options[event.target.selectedIndex].text;
     const tecnologia = new Tecnologia(id, description);
 
     participante.setTecnologia(tecnologia);
@@ -118,8 +117,7 @@ tecnologiaSelected.addEventListener("change", (event) => {
 
 lenguajeSelected.addEventListener("change", (event) => {
     const id = parseInt(event.target.value, 10);
-    const description =
-        event.target.options[event.target.selectedIndex].text;
+    const description = event.target.options[event.target.selectedIndex].text;
     const lenguaje = new Lenguaje(id, description);
 
     participante.setLenguaje(lenguaje);
@@ -134,8 +132,7 @@ lenguajeSelected.addEventListener("change", (event) => {
 
 frameworkSelected.addEventListener("change", (event) => {
     const id = parseInt(event.target.value, 10);
-    const description =
-        event.target.options[event.target.selectedIndex].text;
+    const description = event.target.options[event.target.selectedIndex].text;
     const framework = new Framework(id, description);
 
     participante.setFramework(framework);
@@ -150,8 +147,7 @@ frameworkSelected.addEventListener("change", (event) => {
 
 bbddSelected.addEventListener("change", (event) => {
     const id = parseInt(event.target.value, 10);
-    const description =
-        event.target.options[event.target.selectedIndex].text;
+    const description = event.target.options[event.target.selectedIndex].text;
     const bbdd = new BaseDato(id, description);
 
     participante.setBaseDato(bbdd);
@@ -164,9 +160,21 @@ bbddSelected.addEventListener("change", (event) => {
     calcularRetenciones();
 });
 
-function calcularRetenciones(){
-    
-    if (participante.salario.totalBruto > 0) {        
+function calcularRetenciones() {
+    if (participante.salario.totalBruto > 0) {
         $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
     }
 }
+
+var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+var inlineQuote = document.querySelector("#quote");
+
+$("#jquery").click(function () {
+    $.getJSON(url)
+        .done(function (data) {
+            inlineQuote.innerText = data;
+        })
+        .fail(function () {
+            alert("Something went wrong.");
+        });
+});
