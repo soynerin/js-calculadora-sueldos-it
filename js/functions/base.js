@@ -1,4 +1,24 @@
-const setSalaryItem = (event, idElementDescription, idElementValue) => {
+const cargarPais = (element) => {
+    const requestUrl = "http://ip-api.com/json";
+    const tagElement = document.getElementById(element);
+
+    $.ajax({
+        url: requestUrl,
+        type: "GET",
+        success: function (json) {
+            const option = document.createElement("option");
+            option.text = json["country"];
+            option.value = json["countryCode"];
+
+            tagElement.appendChild(option);
+        },
+        error: function (err) {
+            console.log("Request failed, error= " + err);
+        },
+    });
+};
+
+const setSalaryItem = (event, idElementDescription) => {
     const valueOption = event.target.value;
     const textOption = event.target.options[event.target.selectedIndex].text;
     const description = document.getElementById(idElementDescription);
@@ -48,22 +68,19 @@ const cargarComboPorJson = (element, url, sortById = true) => {
 
 const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: "top-end",
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  });
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+});
 
 const getSalarioPorPais = (id) => {
     var salario = {
-        0: function () {
-            return 1;
-        },
-        54: function () {
+        AR: function () {
             // ARGENTINA
             return 54000;
         },
@@ -615,7 +632,7 @@ const getSalarioPorFramework = (id) => {
         },
         35: function () {
             return 35000;
-        }
+        },
     };
     return salario[id]();
 };
@@ -693,7 +710,7 @@ const getSalarioPorBbdd = (id) => {
         },
         24: function () {
             return 24000;
-        }
+        },
     };
     return salario[id]();
 };

@@ -28,10 +28,10 @@ function cargarListaBasesDatos() {
 function showSalarioMobileDialog() {
     if ($(window).width() < 767) {
         Toast.fire({
-            icon: 'info',
-            title: `Total Bruto: AR$ ${participante.salario.totalBruto}`
+            icon: "info",
+            title: `Total Bruto: AR$ ${participante.salario.totalBruto}`,
         });
-    };
+    }
 }
 
 function calcularRetenciones() {
@@ -40,6 +40,7 @@ function calcularRetenciones() {
     }
 }
 
+cargarPais("country");
 cargarListaProvincias();
 cargarListaRoles();
 cargrListaPataformas();
@@ -58,20 +59,16 @@ const bbddSelected = document.getElementById("bbdd");
 
 const participante = new Participante();
 
-countrySelected.addEventListener("change", (event) => {
-    const idPais = parseInt(event.target.value, 10);
-    const pais = new Pais(
-        idPais,
-        event.target.options[event.target.selectedIndex].text
-    );
+var modalForm = document.getElementById("staticBackdrop");
+modalForm.addEventListener("shown.bs.modal", function (event) {
+    const valueOption = countrySelected.value;
+    const textOption = countrySelected.innerText;
+    const description = document.getElementById("countrySelectedDescription");
+    const pais = new Pais(valueOption, textOption);
 
     participante.setPais(pais);
 
-    setSalaryItem(
-        event,
-        "countrySelectedDescription",
-        "countrySelectedValueSalary"
-    );
+    description.innerText = valueOption != "" ? textOption : "";
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
@@ -188,7 +185,6 @@ bbddSelected.addEventListener("change", (event) => {
 
     showSalarioMobileDialog();
 });
-
 
 var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 var inlineQuote = document.querySelector("#quote");

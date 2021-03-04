@@ -4,10 +4,10 @@
  * @param {Pais} Pais -
  * @param {Region} region - Determinará el porcentaje de participantes por región de la Argentina
  * @param {Rol} rol - Porcentaje de participantes por tipo de rol
- * @param {Tecnologia} tecnologia - 
- * @param {Lenguaje} lenguaje - 
- * @param {Framework} framework - 
- * @param {BaseDato} baseDatos - 
+ * @param {Tecnologia} tecnologia -
+ * @param {Lenguaje} lenguaje -
+ * @param {Framework} framework -
+ * @param {BaseDato} baseDatos -
  * @returns {any}
  */
 class Participante {
@@ -24,12 +24,8 @@ class Participante {
 
         this.setPais = function (paisSeleccionado) {
             if (paisSeleccionado) {
-                if (paisSeleccionado.id === 0) {
-                    this.salario.setPaisSalario(0);
-                } else {
-                    this.pais = paisSeleccionado;
-                    this.salario.setPaisSalario(getSalarioPorPais(this.pais.id));
-                }
+                this.pais = paisSeleccionado;
+                this.salario.setPaisSalario(getSalarioPorPais(this.pais.id));
             } else {
                 console.error(
                     "El país seleccionado no está en nuestra Base de Datos"
@@ -45,7 +41,9 @@ class Participante {
                     this.salario.setRegionSalario(0);
                 } else {
                     this.region = regionSeleccionada;
-                    this.salario.setRegionSalario(getSalarioPorRegion(this.region.id));
+                    this.salario.setRegionSalario(
+                        getSalarioPorRegion(this.region.id)
+                    );
                 }
             } else {
                 console.error(
@@ -79,7 +77,9 @@ class Participante {
                     this.salario.setTecnologiaSalario(0);
                 } else {
                     this.tecnologia = tecnologiaSeleccionada;
-                    this.salario.setTecnologiaSalario(getSalarioPorTecnologia(this.tecnologia.id));
+                    this.salario.setTecnologiaSalario(
+                        getSalarioPorTecnologia(this.tecnologia.id)
+                    );
                 }
             } else {
                 console.error(
@@ -96,7 +96,9 @@ class Participante {
                     this.salario.setLenguajeSalario(0);
                 } else {
                     this.lenguaje = lenguajeSeleccionado;
-                    this.salario.setLenguajeSalario(getSalarioPorLenguaje(this.lenguaje.id));
+                    this.salario.setLenguajeSalario(
+                        getSalarioPorLenguaje(this.lenguaje.id)
+                    );
                 }
             } else {
                 console.error(
@@ -113,7 +115,9 @@ class Participante {
                     this.salario.setFrameworkSalario(0);
                 } else {
                     this.framework = frameworkSeleccionado;
-                    this.salario.setFrameworkSalario(getSalarioPorFramework(this.framework.id));
+                    this.salario.setFrameworkSalario(
+                        getSalarioPorFramework(this.framework.id)
+                    );
                 }
             } else {
                 console.error(
@@ -130,7 +134,9 @@ class Participante {
                     this.salario.setBbddSalario(0);
                 } else {
                     this.baseDatos = bbddSeleccionada;
-                    this.salario.setBbddSalario(getSalarioPorBbdd(this.baseDatos.id));
+                    this.salario.setBbddSalario(
+                        getSalarioPorBbdd(this.baseDatos.id)
+                    );
                 }
             } else {
                 console.error(
