@@ -1,21 +1,35 @@
 const cargarPais = (element) => {
-    const requestUrl = "http://ip-api.com/json";
+    const requestUrl = "https://restcountries.eu/rest/v2/all";
     const tagElement = document.getElementById(element);
 
-    $.ajax({
-        url: requestUrl,
-        type: "GET",
-        success: function (json) {
-            const option = document.createElement("option");
-            option.text = json["country"];
-            option.value = json["countryCode"];
+    const request = new XMLHttpRequest();
+    request.open("GET", requestUrl, true);
 
-            tagElement.appendChild(option);
-        },
-        error: function (err) {
-            console.log("Request failed, error= " + err);
-        },
-    });
+    request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+            const data = JSON.parse(this.response);
+
+            const argentina = data.filter((pais) => pais.name == "Argentina");
+
+            argentina.map(function (x) {
+                const option = document.createElement("option");
+
+                option.text = x.name;
+                option.value = x.alpha2Code;
+
+                tagElement.appendChild(option);
+            });
+        } else {
+            // We reached our target server, but it returned an error
+        }
+    };
+
+    request.onerror = function (err) {
+        // There was a connection error of some sort
+        console.error(err);
+    };
+
+    request.send();
 };
 
 const setSalaryItem = (event, idElementDescription) => {

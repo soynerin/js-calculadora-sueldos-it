@@ -59,16 +59,18 @@ const bbddSelected = document.getElementById("bbdd");
 
 const participante = new Participante();
 
-var modalForm = document.getElementById("staticBackdrop");
-modalForm.addEventListener("shown.bs.modal", function (event) {
-    const valueOption = countrySelected.value;
-    const textOption = countrySelected.innerText;
-    const description = document.getElementById("countrySelectedDescription");
-    const pais = new Pais(valueOption, textOption);
+countrySelected.addEventListener("change", (event) => {
+    const id = event.target.value;
+    const description = event.target.options[event.target.selectedIndex].text;
+    const pais = new Pais(id, description);
 
     participante.setPais(pais);
 
-    description.innerText = valueOption != "" ? textOption : "";
+    setSalaryItem(
+        event,
+        "countrySelectedDescription",
+        "countrySelectedValueSalary"
+    );
 
     participante.salario.setSalarioBruto();
     totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;

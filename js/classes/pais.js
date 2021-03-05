@@ -1,7 +1,7 @@
 /**
  * Representa un País
  * @date 2021-01-22
- * @param {number} id
+ * @param {string} id
  * @param {string} descritcion
  * @returns {any}
  */
