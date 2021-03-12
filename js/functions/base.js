@@ -1,55 +1,33 @@
 const cargarPais = (element) => {
     const requestUrl = "https://restcountries.eu/rest/v2/all";
-    const tagElement = document.getElementById(element);
+    const tagElement = $(`#${element}`);
 
-    const request = new XMLHttpRequest();
-    request.open("GET", requestUrl, true);
-
-    request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-            const data = JSON.parse(this.response);
-
+    $.getJSON(requestUrl)
+        .done(function (data) {
             const argentina = data.filter((pais) => pais.name == "Argentina");
-
-            argentina.map(function (x) {
-                const option = document.createElement("option");
-
-                option.text = x.name;
-                option.value = x.alpha2Code;
-
-                tagElement.appendChild(option);
+    
+            $.map(argentina, function(value, index){
+                tagElement.append(new Option(value.name, value.alpha2Code))
             });
-        } else {
-            // We reached our target server, but it returned an error
-        }
-    };
-
-    request.onerror = function (err) {
-        // There was a connection error of some sort
-        console.error(err);
-    };
-
-    request.send();
+        })
+        .fail(function () {
+            console.error("Tuvimos problemas para obtener los países.");
+    });
 };
 
 const setSalaryItem = (event, idElementDescription) => {
     const valueOption = event.target.value;
     const textOption = event.target.options[event.target.selectedIndex].text;
-    const description = document.getElementById(idElementDescription);
 
-    description.innerText = valueOption != "" ? textOption : "";
+    $(`#${idElementDescription}`).text(valueOption != "" ? textOption : "");
 };
 
-const cargarComboPorJson = (element, url, sortById = true) => {
-    const tagElement = document.getElementById(element);
+const cargarComboPorJson = (element, requestUrl, sortById = true) => {
 
-    const request = new XMLHttpRequest();
-    request.open("GET", url, true);
+    const tagElement = $(`#${element}`);
 
-    request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-            const data = JSON.parse(this.response);
-
+    $.getJSON(requestUrl)
+        .done(function (data) {
             if (sortById) {
                 data[element].sort(function (a, b) {
                     return a.id - b.id;
@@ -59,25 +37,14 @@ const cargarComboPorJson = (element, url, sortById = true) => {
                     return a.nombre > b.nombre;
                 });
             }
-
-            data[element].map(function (x) {
-                const option = document.createElement("option");
-                option.text = x.nombre;
-                option.value = x.id;
-
-                tagElement.appendChild(option);
+    
+            $.map(data[element], function(value, index){
+                tagElement.append(new Option(value.nombre, value.id))
             });
-        } else {
-            // We reached our target server, but it returned an error
-        }
-    };
-
-    request.onerror = function (err) {
-        // There was a connection error of some sort
-        console.error(err);
-    };
-
-    request.send();
+        })
+        .fail(function () {
+            console.error("Tuvimos problemas.");
+    });
 };
 
 const Toast = Swal.mixin({
@@ -91,6 +58,20 @@ const Toast = Swal.mixin({
         toast.addEventListener("mouseleave", Swal.resumeTimer);
     },
 });
+
+const getQuoteOfTheDay = () => {
+    var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+
+    $("#jquery").click(function () {
+        $.getJSON(url)
+            .done(function (data) {
+                $("#quote").text(data);
+            })
+            .fail(function () {
+                console.error("Something went wrong.");
+            });
+    });
+}
 
 const getSalarioPorPais = (id) => {
     var salario = {

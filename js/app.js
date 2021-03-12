@@ -1,3 +1,5 @@
+getQuoteOfTheDay();
+
 function cargarListaProvincias() {
     cargarComboPorJson(
         "provincias",
@@ -48,18 +50,12 @@ cargarListaLenguajesProgramacion();
 cargarListaFrameworks();
 cargarListaBasesDatos();
 
-const totalSalaryArs = document.getElementById("totalSalaryArs");
-const countrySelected = document.getElementById("country");
-const regionSelected = document.getElementById("provincias");
-const rolSelected = document.getElementById("roles");
-const tecnologiaSelected = document.getElementById("plataformas");
-const lenguajeSelected = document.getElementById("lenguajes");
-const frameworkSelected = document.getElementById("frameworks");
-const bbddSelected = document.getElementById("bbdd");
-
+const totalSalaryArs = $("#totalSalaryArs");
 const participante = new Participante();
 
-countrySelected.addEventListener("change", (event) => {
+$("#country").change(function (event) { 
+    event.preventDefault();
+
     const id = event.target.value;
     const description = event.target.options[event.target.selectedIndex].text;
     const pais = new Pais(id, description);
@@ -73,36 +69,40 @@ countrySelected.addEventListener("change", (event) => {
     );
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-regionSelected.addEventListener("change", (event) => {
+$("#provincias").change(function (event) { 
+    event.preventDefault();
+    
     const idRegion = parseInt(event.target.value, 10);
     const descriptionRegion =
         event.target.options[event.target.selectedIndex].text;
     const region = new Region(idRegion, descriptionRegion);
-
+    
     participante.setRegion(region);
-
+    
     setSalaryItem(
         event,
         "regionSelectedDescription",
         "regionSelectedValueSalary"
     );
-
+    
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
-
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
+    
     calcularRetenciones();
-
+    
     showSalarioMobileDialog();
 });
 
-rolSelected.addEventListener("change", (event) => {
+$("#roles").change(function (event) { 
+    event.preventDefault();
+    
     const idRol = parseInt(event.target.value, 10);
     const descriptionRol =
         event.target.options[event.target.selectedIndex].text;
@@ -113,14 +113,17 @@ rolSelected.addEventListener("change", (event) => {
     setSalaryItem(event, "puestoSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-tecnologiaSelected.addEventListener("change", (event) => {
+
+$("#plataformas").change(function (event) { 
+    event.preventDefault();
+    
     const id = parseInt(event.target.value, 10);
     const description = event.target.options[event.target.selectedIndex].text;
     const tecnologia = new Tecnologia(id, description);
@@ -130,14 +133,16 @@ tecnologiaSelected.addEventListener("change", (event) => {
     setSalaryItem(event, "tecnologiaSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-lenguajeSelected.addEventListener("change", (event) => {
+$("#lenguajes").change(function (event) { 
+    event.preventDefault();
+
     const id = parseInt(event.target.value, 10);
     const description = event.target.options[event.target.selectedIndex].text;
     const lenguaje = new Lenguaje(id, description);
@@ -147,14 +152,16 @@ lenguajeSelected.addEventListener("change", (event) => {
     setSalaryItem(event, "lenguajeSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-frameworkSelected.addEventListener("change", (event) => {
+$("#frameworks").change(function (event) { 
+    event.preventDefault();
+
     const id = parseInt(event.target.value, 10);
     const description = event.target.options[event.target.selectedIndex].text;
     const framework = new Framework(id, description);
@@ -164,14 +171,16 @@ frameworkSelected.addEventListener("change", (event) => {
     setSalaryItem(event, "frameworkSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-bbddSelected.addEventListener("change", (event) => {
+$("#bbdd").change(function (event) { 
+    event.preventDefault();
+    
     const id = parseInt(event.target.value, 10);
     const description = event.target.options[event.target.selectedIndex].text;
     const bbdd = new BaseDato(id, description);
@@ -181,22 +190,9 @@ bbddSelected.addEventListener("change", (event) => {
     setSalaryItem(event, "bbddSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.innerText = `AR$ ${participante.salario.totalBruto}`;
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
-});
-
-var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
-var inlineQuote = document.querySelector("#quote");
-
-$("#jquery").click(function () {
-    $.getJSON(url)
-        .done(function (data) {
-            inlineQuote.innerText = data;
-        })
-        .fail(function () {
-            alert("Something went wrong.");
-        });
 });
