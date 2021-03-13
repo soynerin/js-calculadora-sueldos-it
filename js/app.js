@@ -1,3 +1,6 @@
+const totalSalaryArs = $("#totalSalaryArs");
+const participante = new Participante(); 
+
 getQuoteOfTheDay();
 
 function cargarListaProvincias() {
@@ -39,7 +42,9 @@ function showSalarioMobileDialog() {
 function calcularRetenciones() {
     if (participante.salario.totalBruto > 0) {
         $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
+        animateCSS('#contenedorTotalSalarioNeto', 'heartBeat');
     }
+
 }
 
 cargarPais("country");
@@ -49,9 +54,6 @@ cargrListaPataformas();
 cargarListaLenguajesProgramacion();
 cargarListaFrameworks();
 cargarListaBasesDatos();
-
-const totalSalaryArs = $("#totalSalaryArs");
-const participante = new Participante();
 
 $("#country").change(function (event) { 
     event.preventDefault();
@@ -69,7 +71,7 @@ $("#country").change(function (event) {
     );
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);    
 
     calcularRetenciones();
 
@@ -152,7 +154,7 @@ $("#lenguajes").change(function (event) {
     setSalaryItem(event, "lenguajeSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);    
 
     calcularRetenciones();
 

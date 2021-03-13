@@ -1,3 +1,14 @@
+$font-weight-bold: 700 !default;
+
+.text-bolder{
+    font-weight: $font-weight-bold;
+}
+
+#contenedorTotalSalarioNeto{
+    // background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
 .card {
     margin-bottom: 2rem;
     border-radius: 4px;

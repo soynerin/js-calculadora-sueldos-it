@@ -5,14 +5,14 @@ const cargarPais = (element) => {
     $.getJSON(requestUrl)
         .done(function (data) {
             const argentina = data.filter((pais) => pais.name == "Argentina");
-    
-            $.map(argentina, function(value, index){
+
+            $.map(argentina, function (value, index) {
                 tagElement.append(new Option(value.name, value.alpha2Code))
             });
         })
         .fail(function () {
             console.error("Tuvimos problemas para obtener los países.");
-    });
+        });
 };
 
 const setSalaryItem = (event, idElementDescription) => {
@@ -37,14 +37,14 @@ const cargarComboPorJson = (element, requestUrl, sortById = true) => {
                     return a.nombre > b.nombre;
                 });
             }
-    
-            $.map(data[element], function(value, index){
+
+            $.map(data[element], function (value, index) {
                 tagElement.append(new Option(value.nombre, value.id))
             });
         })
         .fail(function () {
             console.error("Tuvimos problemas.");
-    });
+        });
 };
 
 const Toast = Swal.mixin({
@@ -72,6 +72,22 @@ const getQuoteOfTheDay = () => {
             });
     });
 }
+
+const animateCSS = (element, animation, prefix = 'animate__') =>
+    new Promise((resolve, reject) => {
+        const animationName = `${prefix}${animation}`;
+        const node = document.querySelector(element);
+
+        node.classList.add(`${prefix}animated`, animationName);
+
+        function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve('Animation ended');
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd, { once: true });
+    });
 
 const getSalarioPorPais = (id) => {
     var salario = {
