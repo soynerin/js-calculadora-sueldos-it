@@ -1,53 +1,9 @@
 const totalSalaryArs = $("#totalSalaryArs");
-const participante = new Participante(); 
+const participante = new Participante();
 
 getQuoteOfTheDay();
 
-function cargarListaProvincias() {
-    cargarComboPorJson(
-        "provincias",
-        "https://apis.datos.gob.ar/georef/api/provincias"
-    );
-}
-
-function cargarListaRoles() {
-    cargarComboPorJson("roles", "json/roles.json", false);
-}
-
-function cargrListaPataformas() {
-    cargarComboPorJson("plataformas", "json/plataformas.json", false);
-}
-
-function cargarListaLenguajesProgramacion() {
-    cargarComboPorJson("lenguajes", "json/lenguajes.json", false);
-}
-
-function cargarListaFrameworks() {
-    cargarComboPorJson("frameworks", "json/frameworks.json", false);
-}
-
-function cargarListaBasesDatos() {
-    cargarComboPorJson("bbdd", "json/bbdd.json", false);
-}
-
-function showSalarioMobileDialog() {
-    if ($(window).width() < 767) {
-        Toast.fire({
-            icon: "info",
-            title: `Total Bruto: AR$ ${participante.salario.totalBruto}`,
-        });
-    }
-}
-
-function calcularRetenciones() {
-    if (participante.salario.totalBruto > 0) {
-        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
-        animateCSS('#contenedorTotalSalarioNeto', 'heartBeat');
-    }
-
-}
-
-cargarPais("country");
+cargarPais("country", "pais");
 cargarListaProvincias();
 cargarListaRoles();
 cargrListaPataformas();
@@ -55,11 +11,18 @@ cargarListaLenguajesProgramacion();
 cargarListaFrameworks();
 cargarListaBasesDatos();
 
-$("#country").change(function (event) { 
+$("#country").change(function (event) {
     event.preventDefault();
 
     const id = event.target.value;
-    const description = event.target.options[event.target.selectedIndex].text;
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
     const pais = new Pais(id, description);
 
     participante.setPais(pais);
@@ -71,44 +34,57 @@ $("#country").change(function (event) {
     );
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);    
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-$("#provincias").change(function (event) { 
+$("#provincias").change(function (event) {
     event.preventDefault();
-    
+
     const idRegion = parseInt(event.target.value, 10);
-    const descriptionRegion =
-        event.target.options[event.target.selectedIndex].text;
-    const region = new Region(idRegion, descriptionRegion);
-    
+
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
+    const region = new Region(idRegion, description);
+
     participante.setRegion(region);
-    
+
     setSalaryItem(
         event,
         "regionSelectedDescription",
         "regionSelectedValueSalary"
     );
-    
+
     participante.salario.setSalarioBruto();
     totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
-    
+
     calcularRetenciones();
-    
+
     showSalarioMobileDialog();
 });
 
-$("#roles").change(function (event) { 
+$("#roles").change(function (event) {
     event.preventDefault();
-    
+
     const idRol = parseInt(event.target.value, 10);
-    const descriptionRol =
-        event.target.options[event.target.selectedIndex].text;
-    const rol = new Rol(idRol, descriptionRol);
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
+    const rol = new Rol(idRol, description);
 
     participante.setRol(rol);
 
@@ -122,12 +98,18 @@ $("#roles").change(function (event) {
     showSalarioMobileDialog();
 });
 
-
-$("#plataformas").change(function (event) { 
+$("#plataformas").change(function (event) {
     event.preventDefault();
-    
+
     const id = parseInt(event.target.value, 10);
-    const description = event.target.options[event.target.selectedIndex].text;
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
     const tecnologia = new Tecnologia(id, description);
 
     participante.setTecnologia(tecnologia);
@@ -142,11 +124,18 @@ $("#plataformas").change(function (event) {
     showSalarioMobileDialog();
 });
 
-$("#lenguajes").change(function (event) { 
+$("#lenguajes").change(function (event) {
     event.preventDefault();
 
     const id = parseInt(event.target.value, 10);
-    const description = event.target.options[event.target.selectedIndex].text;
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
     const lenguaje = new Lenguaje(id, description);
 
     participante.setLenguaje(lenguaje);
@@ -154,18 +143,25 @@ $("#lenguajes").change(function (event) {
     setSalaryItem(event, "lenguajeSelectedDescription", "");
 
     participante.salario.setSalarioBruto();
-    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);    
+    totalSalaryArs.text(`AR$ ${participante.salario.totalBruto}`);
 
     calcularRetenciones();
 
     showSalarioMobileDialog();
 });
 
-$("#frameworks").change(function (event) { 
+$("#frameworks").change(function (event) {
     event.preventDefault();
 
     const id = parseInt(event.target.value, 10);
-    const description = event.target.options[event.target.selectedIndex].text;
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
     const framework = new Framework(id, description);
 
     participante.setFramework(framework);
@@ -180,11 +176,18 @@ $("#frameworks").change(function (event) {
     showSalarioMobileDialog();
 });
 
-$("#bbdd").change(function (event) { 
+$("#bbdd").change(function (event) {
     event.preventDefault();
-    
+
     const id = parseInt(event.target.value, 10);
-    const description = event.target.options[event.target.selectedIndex].text;
+    let description = "";
+
+    if (event.target.options) {
+        description = event.target.options[event.target.selectedIndex].text;
+    } else {
+        description = event.target.text;
+    }
+
     const bbdd = new BaseDato(id, description);
 
     participante.setBaseDato(bbdd);
@@ -197,4 +200,12 @@ $("#bbdd").change(function (event) {
     calcularRetenciones();
 
     showSalarioMobileDialog();
+});
+
+$("#save-info").change(function () {
+    if (this.checked) {
+        localStorage.setItem("participante", JSON.stringify(participante));
+    } else {
+        localStorage.clear();
+    }
 });

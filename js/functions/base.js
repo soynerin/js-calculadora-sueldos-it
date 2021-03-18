@@ -1,4 +1,4 @@
-const cargarPais = (element) => {
+const cargarPais = (element, nombrePropiedad) => {
     const requestUrl = "https://restcountries.eu/rest/v2/all";
     const tagElement = $(`#${element}`);
 
@@ -7,23 +7,55 @@ const cargarPais = (element) => {
             const argentina = data.filter((pais) => pais.name == "Argentina");
 
             $.map(argentina, function (value, index) {
-                tagElement.append(new Option(value.name, value.alpha2Code))
+                tagElement.append(new Option(value.name, value.alpha2Code));
             });
         })
         .fail(function () {
             console.error("Tuvimos problemas para obtener los países.");
+        })
+        .always(function () {
+            let retrievedObject = localStorage.getItem("participante");
+
+            if (retrievedObject) {
+                retrievedObject = JSON.parse(retrievedObject);
+
+                if (retrievedObject[nombrePropiedad]) {
+                    $("#country")
+                        .find(
+                            'option[value="' +
+                                retrievedObject[nombrePropiedad].id +
+                                '"]'
+                        )
+                        .attr("selected", "selected")
+                        .trigger("change");
+                }
+            }
         });
 };
 
 const setSalaryItem = (event, idElementDescription) => {
     const valueOption = event.target.value;
-    const textOption = event.target.options[event.target.selectedIndex].text;
+    let textOption = "";
+
+    if (event.target.options) {
+        textOption = event.target.options[event.target.selectedIndex].text;
+    } else {
+        textOption = event.target.text;
+    }
 
     $(`#${idElementDescription}`).text(valueOption != "" ? textOption : "");
 };
 
-const cargarComboPorJson = (element, requestUrl, sortById = true) => {
+const setItemComboByLocalStorage = (element, valueId) => {
+    valueId = valueId.toString().padStart(2, "0");
 
+    element
+        .find('option[value="' + valueId.toString() + '"]')
+        .attr("selected", "selected")
+        .trigger("change");
+};
+
+const cargarComboPorJson = (element, requestUrl, sortById, nombrePropiedad) => {
     const tagElement = $(`#${element}`);
 
     $.getJSON(requestUrl)
@@ -39,11 +71,25 @@ const cargarComboPorJson = (element, requestUrl, sortById = true) => {
             }
 
             $.map(data[element], function (value, index) {
-                tagElement.append(new Option(value.nombre, value.id))
+                tagElement.append(new Option(value.nombre, value.id));
             });
         })
         .fail(function () {
             console.error("Tuvimos problemas.");
+        })
+        .always(function () {
+            let retrievedObject = localStorage.getItem("participante");
+
+            if (retrievedObject) {
+                retrievedObject = JSON.parse(retrievedObject);
+
+                if (retrievedObject[nombrePropiedad]) {
+                    setItemComboByLocalStorage(
+                        tagElement,
+                        retrievedObject[nombrePropiedad].id
+                    );
+                }
+            }
         });
 };
 
@@ -71,9 +117,9 @@ const getQuoteOfTheDay = () => {
                 console.error("Something went wrong.");
             });
     });
-}
+};
 
-const animateCSS = (element, animation, prefix = 'animate__') =>
+const animateCSS = (element, animation, prefix = "animate__") =>
     new Promise((resolve, reject) => {
         const animationName = `${prefix}${animation}`;
         const node = document.querySelector(element);
@@ -83,11 +129,68 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
         function handleAnimationEnd(event) {
             event.stopPropagation();
             node.classList.remove(`${prefix}animated`, animationName);
-            resolve('Animation ended');
+            resolve("Animation ended");
         }
 
-        node.addEventListener('animationend', handleAnimationEnd, { once: true });
+        node.addEventListener("animationend", handleAnimationEnd, {
+            once: true,
+        });
     });
+
+function cargarListaProvincias() {
+    cargarComboPorJson(
+        "provincias",
+        "https://apis.datos.gob.ar/georef/api/provincias",
+        true,
+        "region"
+    );
+}
+
+function cargarListaRoles() {
+    cargarComboPorJson("roles", "json/roles.json", false, "rol");
+}
+
+function cargrListaPataformas() {
+    cargarComboPorJson(
+        "plataformas",
+        "json/plataformas.json",
+        false,
+        "tecnologia"
+    );
+}
+
+function cargarListaLenguajesProgramacion() {
+    cargarComboPorJson("lenguajes", "json/lenguajes.json", false, "lenguaje");
+}
+
+function cargarListaFrameworks() {
+    cargarComboPorJson(
+        "frameworks",
+        "json/frameworks.json",
+        false,
+        "framework"
+    );
+}
+
+function cargarListaBasesDatos() {
+    cargarComboPorJson("bbdd", "json/bbdd.json", false, "baseDatos");
+}
+
+function showSalarioMobileDialog() {
+    if ($(window).width() < 767) {
+        Toast.fire({
+            icon: "info",
+            title: `Total Bruto: AR$ ${participante.salario.totalBruto}`,
+        });
+    }
+}
+
+function calcularRetenciones() {
+    if (participante.salario.totalBruto > 0) {
+        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
+        animateCSS("#contenedorTotalSalarioNeto", "heartBeat");
+    }
+}
 
 const getSalarioPorPais = (id) => {
     var salario = {

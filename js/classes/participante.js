@@ -31,8 +31,6 @@ class Participante {
                     "El país seleccionado no está en nuestra Base de Datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setRegion = function (regionSeleccionada) {
@@ -50,8 +48,6 @@ class Participante {
                     "La región ingresada no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setRol = function (rolSeleccionado) {
@@ -67,8 +63,6 @@ class Participante {
                     "La rol ingresado no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setTecnologia = function (tecnologiaSeleccionada) {
@@ -86,8 +80,6 @@ class Participante {
                     "La tecnología o plataforma ingresada no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setLenguaje = function (lenguajeSeleccionado) {
@@ -105,8 +97,6 @@ class Participante {
                     "El lenguaje ingresado no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setFramework = function (frameworkSeleccionado) {
@@ -124,8 +114,6 @@ class Participante {
                     "El framework o librería ingresada no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
 
         this.setBaseDato = function (bbddSeleccionada) {
@@ -143,8 +131,6 @@ class Participante {
                     "La Base de Datos ingresada no esta en nuestra base de datos"
                 );
             }
-
-            console.log(this);
         };
     }
 }
