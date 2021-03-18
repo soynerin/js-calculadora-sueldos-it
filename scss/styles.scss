@@ -21,6 +21,16 @@
     }
 }
 
+header {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-image: url("../img/bg-mobile.jpg");
+}
+
+main {
+    background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+    background-image: url("../img/bg-mobile-main.jpg");
+}
+
 @media (min-width: 768px) {
     header {
         background-image: url("../img/bg.jpg");
