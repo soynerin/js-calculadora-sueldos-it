@@ -84,7 +84,8 @@
                                     </div>
                                     <span class="text-dark text-bolder" id="salarioNeto">AR$ 0</span>
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between">
+                                <li class="list-group-item d-flex justify-content-between total-bruto-bg"
+                                    id="contenedorTotalSalarioBruto">
                                     <span>Total BRUTO (ARS)</span>
                                     <!-- <span>Total (USD)</span> -->
                                     <strong id="totalSalaryArs"></strong>
@@ -223,14 +224,16 @@
             <br />
             <br />
             <div class="alert alert-dark shadow-lg p-3 mb-5 rounded" role="alert">
-                <h4 class="alert-heading">
-                    ¡Esto es una prueba! (próximamente en multilenguaje)
-                </h4>
-                <p>
+                <h5 class="alert-heading">
                     ¡Quieres inspirarte con algo cada día, hacé clic en el
                     botón de abajo y divertite!
+                </h5>
+                <p>
+                    (próximamente en multilenguaje)
                 </p>
-                <button id="jquery" class="buttonQuote">Frase del Día</button>
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <button id="jquery" class="buttonQuote">Frase del Día</button>
+                </div>
                 <hr />
                 <blockquote class="blockquote">
                     <p id="quote">
@@ -246,21 +249,32 @@
         <div class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-12">
-                        <div class="card text-white bg-info shadow-lg rounded">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="card text-white shadow-lg rounded h-100 text-center"
+                            style="background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%); padding: 2rem;">
                             <div class="card-body">
                                 <h3 class="card-title">Calcula tu Sueldo</h3>
                                 <p class="card-text">
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Nulla consectetur eos
-                                    corporis temporibus quas molestiae
-                                    fugiat laudantium. Dolores nobis
-                                    aspernatur architecto nemo voluptatem
-                                    similique alias dolor obcaecati fuga?
-                                    Nam, nesciunt?
+                                    Es simple, rápido e intuitivo...
                                 </p>
-                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop" id="newJobButton">Haz click aquí</a>
+                                <div class="d-grid gap-2 col-12 mx-auto">
+                                    <a href="#" class="btn btn-outline-light text-uppercase" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop" id="newJobButton">Fijate acá</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-4 d-lg-none">
+                        <hr data-content="NERIN" class="hr-text">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="card text-white shadow-lg rounded h-100 text-center"
+                            style="background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%); padding: 2rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">Aportá a la comunidad</h4>
+                                <div class="d-grid gap-2 col-12 mx-auto">
+                                    PRÓXIMAMENTE
+                                </div>
                             </div>
                         </div>
                     </div>

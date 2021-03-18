@@ -187,8 +187,11 @@ function showSalarioMobileDialog() {
 
 function calcularRetenciones() {
     if (participante.salario.totalBruto > 0) {
-        $("#salarioNeto").text(`AR$ ${participante.salario.totalBruto * 0.83}`);
-        animateCSS("#contenedorTotalSalarioNeto", "heartBeat");
+        $("#salarioNeto").text(
+            `AR$ ${(participante.salario.totalBruto * 0.83).toFixed(2)}`
+        );
+        animateCSS("#contenedorTotalSalarioNeto", "flash");
+        animateCSS("#contenedorTotalSalarioBruto", "zoomIn");
     }
 }
 

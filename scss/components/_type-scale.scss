@@ -6,7 +6,11 @@ html {
 } /*16px*/
 
 body {
-    background: white;
+    background-image: linear-gradient(
+        to top,
+        #cfd9df 0%,
+        #e2ebf0 100%
+    ) !important;
     font-family: "Revalia", sans-serif;
     font-weight: 400;
     line-height: 1.75;
