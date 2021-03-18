@@ -1,10 +1,6 @@
-$font-weight-bold: 700 !default;
+@import "../scss/components/type-scale";
 
-.text-bolder{
-    font-weight: $font-weight-bold;
-}
-
-#contenedorTotalSalarioNeto{
+#contenedorTotalSalarioNeto {
     // background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
@@ -27,10 +23,10 @@ $font-weight-bold: 700 !default;
 
 @media (min-width: 768px) {
     header {
-        background-image: url("../img/bg-header.jpg");
+        background-image: url("../img/bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center top;
+        background-position: center center;
     }
 
     main {
@@ -56,7 +52,7 @@ $font-weight-bold: 700 !default;
     border-radius: 40px;
     background: #fff;
     border: 2px solid #1abc9c;
-    color: #1abc9c;
+    color: darkslategrey;
     letter-spacing: 1px;
     text-shadow: 0;
     font-size: 12px;
@@ -68,7 +64,7 @@ $font-weight-bold: 700 !default;
 
     &:hover {
         color: white;
-        background: #1abc9c;
+        background: darkslategrey;
     }
 }
 
