@@ -321,18 +321,14 @@
                     <div class="col-xl-4 col-lg-4 mb-50">
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <!-- <a href="index.html"><img src="img/logo.png" class="img-fluid" alt="logo"
-                                        width="100"></a> -->
                                 <div class="footer-widget-heading">
                                     <h3>Calculadora de Sueldos IT</h3>
                                 </div>
                             </div>
                             <div class="footer-text">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consec tetur
-                                    adipisicing elit, sed do eiusmod tempor
-                                    incididuntut consec tetur adipisicing
-                                    elit,Lorem ipsum dolor sit amet.
+                                    Pensada pura y exclusivamente para el mundo IT, en donde calcular tu sueldo nunca
+                                    fue más fácil.
                                 </p>
                             </div>
                             <div class="footer-social-icon">
@@ -424,34 +420,8 @@
     <script src="js/classes/bbdd.js" defer></script>
     <script src="js/classes/participante-dist.js" defer></script>
     <script src="js/app-dist.js" defer></script>
-
     <!-- GetButton.io widget -->
-    <script type="text/javascript">
-        (function () {
-            var options = {
-                whatsapp: "+541168573664", // WhatsApp number
-                telegram: "soyNerin", // Telegram bot username
-                call_to_action: "Envíanos un mensaje", // Call to action
-                button_color: "#FF6550", // Color of button
-                position: "right", // Position may be 'right' or 'left'
-                order: "telegram,whatsapp", // Order of buttons
-                pre_filled_message:
-                    "Hola, necesito ayuda con el uso de su página.", // WhatsApp pre-filled message
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = url + "/widget-send-button/js/init.js";
-            s.onload = function () {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-    </script>
+    <script src="js/functions/get-button-dist.js" defer></script>
 </body>
 
 </html>
