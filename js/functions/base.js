@@ -1,13 +1,14 @@
 const cargarPais = (element, nombrePropiedad) => {
-    const requestUrl = "https://restcountries.eu/rest/v2/all";
+    const requestUrl = "https://restcountries.com/v3.1/name/argentina";
     const tagElement = $(`#${element}`);
 
     $.getJSON(requestUrl)
         .done(function (data) {
-            const argentina = data.filter((pais) => pais.name == "Argentina");
+
+            const argentina = data.filter((pais) => pais.name.common == "Argentina");
 
             $.map(argentina, function (value, index) {
-                tagElement.append(new Option(value.name, value.alpha2Code));
+                tagElement.append(new Option(value.name.common, value.fifa));
             });
         })
         .fail(function () {
@@ -197,7 +198,7 @@ function calcularRetenciones() {
 
 const getSalarioPorPais = (id) => {
     var salario = {
-        AR: function () {
+        ARG: function () {
             // ARGENTINA
             return 54000;
         },
